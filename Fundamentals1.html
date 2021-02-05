@@ -1,0 +1,44 @@
+<head>
+  <title>Fundamentals 1 Solution</title>
+</head>
+
+<style>
+  svg {
+    background-color: grey
+  }
+</style>
+
+<body>
+  <script src="https://d3js.org/d3.v5.min.js"> </script>
+
+  <svg id="chart1" width="600" height="300"> </svg>
+
+  <script>
+    function factors (x) {
+      const array = [];
+
+      for (var i = x; i > 0; i -= 1) {
+        if ((x % i) == 0) {
+          array.push(i);
+        }
+      }
+
+      return array;
+    }
+
+    const myArray = factors(24);
+
+    d3.select("#chart1")
+      .selectAll("circle")
+      .data(myArray)
+      .enter()
+      .append("circle")
+        .attr("r", d => d)
+        .attr("cy", 150)
+        .attr("cx", d => (d*10))
+        .style("fill", "yellow")
+        .style("stroke", "black")
+        .style("stroke-width", "2")
+  </script>
+
+</body>
