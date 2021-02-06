@@ -1,0 +1,45 @@
+<head>
+  <title>Fundamentals 2 Solution</title>
+</head>
+
+<style>
+  svg {
+    background-color: grey
+  }
+</style>
+
+<body>
+  <script src="https://d3js.org/d3.v5.min.js"> </script>
+
+  <svg id="chart2" width="1000" height="300"> </svg>
+
+  <script>
+
+    const newArray = [92, 56, 14, 73, 22, 38, 93, 45, 55];
+    var index = -50;
+
+    d3.select("#chart2")
+      .selectAll("circle")
+      .data(newArray)
+      .enter()
+      .append("circle")
+        .attr("r", d => (d/2))
+        .attr("cy", 150)
+        .attr("cx", d => (index+=100))
+        .style("fill", "yellow")
+        .style("stroke", "black")
+        .style("stroke-width", "2")
+
+    newArray.sort();
+    index = -50;
+
+    setTimeout(function() {
+      d3.select("#chart2").selectAll("circle")
+        .data(newArray)
+        .transition().duration(1500)
+          .attr("r", d => (d/2))
+    }, 2000)
+
+  </script>
+
+</body>
