@@ -1,0 +1,75 @@
+<!--
+Your names goes here
+-->
+<body>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- Set up basic webpage structure -->
+  <div id="header"></div>
+  <div id="nominal"></div>
+  <div id="ordinal"></div>
+  <div id="interval"></div>
+  <div id="ratio"></div>
+
+  <style>
+    .red {
+        color: white;
+        background-color: #e41a1c;
+    }
+    .green {
+        color: #4daf4a;
+    }
+    .blue {
+        color: white;
+        background-color: #377eb8;
+    }
+    .purple {
+        color: #984ea3;
+    }
+  </style>
+
+  <script>
+    // Header text
+    d3.select("#header").insert("h1")
+      .text("Different Types of Data: NOIR");
+
+    // Nominal Data
+    const nom = d3.select("#nominal");
+    nom.classed("red", true);
+    nom.insert("h2").text("Nominal Data");
+    nom.insert("p")
+      .text("Nominal data often serves as labels. This type of data is unordered"
+      + " and non numerical. A good example of nominal data is hair color.");
+
+    // Ordinal Data
+    const ord = d3.select("#ordinal");
+    ord.classed("green", true);
+    ord.insert("h2").text("Ordinal Data");
+    ord.insert("p")
+      .text("Ordered data is data that is ordered, but still non numerical."
+      + " A good example of ordinal data is a survey with options from"
+      + " most satisfied to least satisfied.");
+
+    // Interval Data
+    const inte = d3.select("#interval");
+    inte.classed("blue", true);
+    inte.insert("h2").text("Interval Data");
+    inte.insert("p")
+      .text("Interval data is data that is ordered and numerical, but does not"
+      + " have an absolute zero. A good example of interval data is time: you"
+      + " can select various different intervals of time, but you often don't"
+      + " start your datasets from the beginning of time.");
+
+    // Ratio Data
+    const rat = d3.select("#ratio");
+    rat.classed("purple", true);
+    rat.insert("h2").text("Ratio Data");
+    rat.insert("p")
+    .text("Ratio data is data that is ordered, numerical, and has an absolute"
+    + " zero. A good example of ratio data is weight.");
+
+
+
+  </script>
+
+</body>
